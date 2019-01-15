@@ -1,0 +1,8 @@
+# npm test -- -g "" 或者 npm test -- -f ""
+
+
+# 可以识别子目录
+--recursive
+
+# 需要执行单元测试的文件或者文件组(,分隔)也可以删除执行 test 下面的所有的文件
+--file test/router/index.js
