@@ -5,9 +5,8 @@ const serve = require('koa-static-cache');
 const logAdapter = new (require('koa-log4js-base'))('<%= name %>');
 const bodyParser = require('koa-bodyparser');
 <% if (session === 'y') { %>
-  const session = require('koa-session');
+const session = require('koa-session');
 <% } %>
-{{if (session === 'y')}}
 <% if (template === 'y') { %>
 const path = require('path');
 const render = require('koa-art-template');
@@ -34,7 +33,7 @@ app.use(bodyParser()); // post 请求参数
 
 // 路由
 const appRouter = new Router();
-appRouter.use('/{{ name }}', require('./routes/index').routes());
+appRouter.use('/<%= name %>', require('./routes/index').routes());
 app.use(appRouter.routes()).use(appRouter.allowedMethods());
 
 module.exports = app;
