@@ -7,10 +7,10 @@
   "license": "MIT",
   "private": true,<% let depi = null; l = dep.length - 1; -%>
   <% if (l >= 0) { %>
-    "dependencies": {<% for(let i = 0; i <= l; i++) { %><% depi = dep[i]; %>
+  "dependencies": {<% for(let i = 0; i <= l; i++) { %><% depi = dep[i]; %>
     "<%= depi.name %>": "^<%= depi.version %>"<% if (i !== l) { -%>,<% } %><% } %>
-    }<% if (devLength > 0) { %>,<% } %><% } %><% if (devLength > 0) { %>
-    "devDependencies": {<% for (let i = 0; i < devLength; i++) { %><% depi = devDep[i]; %>
+  }<% if (devLength > 0) { %>,<% } %><% } %><% if (devLength > 0) { %>
+  "devDependencies": {<% for (let i = 0; i < devLength; i++) { %><% depi = devDep[i]; %>
     "<%= depi.name %>": "^<%= depi.version %>"<% if (i !== devLength - l) { %>,<% } %><% } %>
-    }<% } %>
+  }<% } %>
 }
