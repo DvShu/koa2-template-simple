@@ -21,19 +21,17 @@
       "message": "不填表示不使用mongo,[test@mongo:127.0.0.1:27017/test]"
     }
   ],
-  "promptModule": {
-    "session": {
-      "dependencies": ["koa-session"]
-    },
-    "template": {
-      "dependencies": ["koa-ejs"]
-    },
-    "mongo": {
-      "dependencies": ["mongodb", "mongo-adapt"]
-    },
-    "test": {
-      "devDependencies": ["mocha", "supertest"]
-    }
+  "session": {
+    "dependencies": ["koa-session"]
+  },
+  "template": {
+    "dependencies": ["koa-ejs"]
+  },
+  "mongo": {
+    "dependencies": ["mongodb", "mongo-adapt"]
+  },
+  "test": {
+    "devDependencies": ["mocha", "supertest"]
   },
   "dependencies": [
     "koa",
