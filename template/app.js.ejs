@@ -4,10 +4,10 @@ const Router = require('koa-router');
 const serve = require('koa-static-cache');
 const logAdapter = new (require('koa-log4js-base'))('<%= name %>');
 const bodyParser = require('koa-bodyparser');
-<% if (session === 'y') { %>
+<% if (session === 'y') { -%>
 const session = require('koa-session');
-<% } %>
-<% if (template === 'y') { %>
+<% } -%>
+<% if (template === 'y') { -%>
 const path = require('path');
 const render = require('koa-art-template');
 
@@ -17,8 +17,8 @@ render(app, {
   layout: false,
   _with: false
 });
-<% } %>
-<% if (session === 'y') { %>
+<% } -%>
+<% if (session === 'y') { -%>
 // session
 app.keys = ["<%= name %>-<%= time %>"];
 app.use(session({
