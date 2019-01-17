@@ -4,8 +4,10 @@
  * @datetime: {{ datetime }}
  */
 module.exports = {
-  port: 3000, // 应用启动端口号{{if mongo}}
+  port: 3000, // 应用启动端口号
+  <% if (mongo) { %>
   mongo: {
-    {{ mongo[0] }}: '{{ mongo[1] }}'
-  }{{/if}}
+    <%= mongo[0] %>: '<%= mongo[1] %>'
+  }
+  <% } %>
 };

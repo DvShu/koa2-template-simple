@@ -1,15 +1,22 @@
 {
-  "name": "{{ name }}",
+  "name": "<%= name %>",
   "version": "0.0.001",
   "description": "",
   "main": "bin/www",
   "author": "haoran.shu",
   "license": "MIT",
-  "private": true,{{set last = dependencies.length - 1}}
-  "dependencies": { {{each dependencies}}
-    "{{ $value.name }}": "^{{ $value.version }}"{{if $index !== last}},{{/if}}{{/each}}
-  }{{if (test === 'y')}},{{/if}}{{if (test === 'y')}}{{set last = testDependencies.length - 1}}
-  "devDependencies": { {{each testDependencies}}
-    "{{ $value.name }}": "^{{ $value.version }}"{{if $index !== last}},{{/if}}{{/each}}
-  }{{/if}}
+  "private": true,
+  <% let depi = null; %>
+  <% for(let i = 0, l = dep.length - 1; i <= l; i++) { %>
+  <% depi = dep[i]; %>
+  "dependencies": {
+    "<%= depi.name %>": "^<%= depi.version %>"<% if (i !== l) { %>,<% } %>
+  }<% if (devLength > 0) { %>,<% } %>
+  <% } %>
+  <% for (let i = 0; i < devLength; i++) { %>
+  <% depi = devDep[i]; %>
+  "devDependencies": {
+  "<%= depi.name %>": "^<%= depi.version %>"<% if (i !== devLength - l) { %>,<% } %>
+  }<% if (devLength > 0) { %>,<% } %>
+  <% } %>
 }
