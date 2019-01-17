@@ -18,7 +18,7 @@ render(app, {
   _with: false
 });
 <% } -%>
-<% if (session === 'y') { -%>
+<% if (session === 'y') { %>
 // session
 app.keys = ["<%= name %>-<%= time %>"];
 app.use(session({
