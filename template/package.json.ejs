@@ -4,12 +4,12 @@
   "description": "",
   "main": "bin/www",
   "author": "",
-  "license": "MIT<%= devLength %>",
+  "license": "MIT<%= devLength %>_<%= devLength %>_<%= (devLength - 1) %>",
   "private": true,<% let depi = null; l = dep.length - 1; -%>
   <% if (l >= 0) { %>
   "dependencies": {<% for(let i = 0; i <= l; i++) { %><% depi = dep[i]; %>
     "<%= depi.name %>": "^<%= depi.version %>"<% if (i !== l) { -%>,<% } %><% } %>
-  }<% if (devLength > 0) { %>,<%= devLength - 1 %><% } %><% } %><% if (devLength > 0) { %>
+  }<% if (devLength > 0) { %>,<% } %><% } %><% if (devLength > 0) { %>
   "devDependencies": {<% for (let i = 0; i < devLength; i++) { %><% depi = devDep[i]; %>
     "<%= depi.name %>": "^<%= depi.version %>@<%= i %>-<%= devLength - 1 %>"<% if (i !== devLength - l) { %>,<% } %><% } %>
   }<% } %>
