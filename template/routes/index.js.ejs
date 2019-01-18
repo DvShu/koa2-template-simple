@@ -4,4 +4,10 @@ router.get('/index', async (ctx) => {
   ctx.body = 'router -- Hello World!!!';
 });
 
+<% if (template) { -%>
+router.get('/tpl', async (ctx) => {
+  await ctx.render('about', { message: 'This is about page!' });
+});
+<% } %>
+
 module.exports = router;
