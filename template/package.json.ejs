@@ -11,6 +11,6 @@
     "<%= depi.name %>": "^<%= depi.version %>"<% if (i !== l) { -%>,<% } %><% } %>
   }<% if (devLength > 0) { %>,<% } %><% } %><% if (devLength > 0) { %>
   "devDependencies": {<% for (let i = 0; i < devLength; i++) { %><% depi = devDep[i]; %>
-    "<%= depi.name %>": "^<%= depi.version %>"<% if (i !== devLength - l) { %>,<% } %><% } %>
+    "<%= depi.name %>": "^<%= depi.version %>@<%= i %>-<%= (devLength - l) %>"<% if (i !== devLength - l) { %>,<% } %><% } %>
   }<% } %>
 }

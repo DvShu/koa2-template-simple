@@ -9,7 +9,7 @@ const session = require('koa-session');
 <% } -%>
 <% if (template) { -%>
 const path = require('path');
-const render = require('koa-art-template');
+const render = require('koa-ejs');
 
 // 模板引擎
 render(app, {
@@ -20,7 +20,7 @@ render(app, {
 <% } -%>
 <% if (session) { %>
 // session
-app.keys = ["<%= name %>-<%= time %>"];
+app.keys = ["<%= name %>_<%= time %>"];
 app.use(session({
   key: "<%= name %>:sess", // cookie key
   maxAge: 1800000, // session 有效期: 30(min)
