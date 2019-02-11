@@ -2,7 +2,7 @@
 const app = new (require('koa'))();
 const Router = require('koa-router');
 const serve = require('koa-static-cache');
-const logAdapter = new (require('koa-log4js-base'))('<%= name %>');
+const selfLog = new (require('self-log'))('<%= name %>');
 const bodyParser = require('koa-bodyparser');
 <% if (session) { -%>
 const session = require('koa-session');
@@ -27,7 +27,7 @@ app.use(session({
   renew: true // 保持持久状态
 }, app)); // 配置 session
 <% } %>
-app.use(logAdapter.adapt()); // 日志记录
+app.use(selfLog.requestLogger()); // 日志记录
 app.use(serve('./public',{gzip:true,prefix:'/<%= name %>/'})); // 静态资源
 app.use(bodyParser()); // post 请求参数
 
