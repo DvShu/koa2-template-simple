@@ -9,13 +9,14 @@ const session = require('koa-session');
 <% } -%>
 <% if (template) { -%>
 const path = require('path');
-const render = require('koa-ejs');
+const render = require('koa-art-template');
 
 // 模板引擎
 render(app, {
   root: path.join(__dirname, 'views'),
-  layout: false,
-  _with: false
+  extname: '.html',
+  cache: false,
+  minimize: false
 });
 <% } -%>
 <% if (session) { %>
