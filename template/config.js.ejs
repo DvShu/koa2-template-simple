@@ -1,6 +1,7 @@
 module.exports = {
   port: 3000, // 应用启动端口号<% if (mongo) { %>
   mongo: {
-    <%= mongoUrl[0] %>: '<%= mongoUrl[1] %>'
+    url: '<%= mongoUrl %>',
+	dbs: '<%= dbs %>'
   }<% } %>
 };
