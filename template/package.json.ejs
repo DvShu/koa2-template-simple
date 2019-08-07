@@ -5,7 +5,10 @@
   "main": "bin/www",
   "author": "",
   "license": "MIT",
-  "private": true,<% let depi = null; l = dep.length - 1; -%>
+  "private": true,
+  "scripts": {
+    <% if (test) { %>"test": "ava test/routes/index_test.js -v --fail-fast"<% } %>
+  },<% let depi = null; l = dep.length - 1; -%>
   <% if (l >= 0) { %>
   "dependencies": {<% for(let i = 0; i <= l; i++) { %><% depi = dep[i]; %>
     "<%= depi.name %>": "^<%= depi.version %>"<% if (i !== l) { -%>,<% } %><% } %>
