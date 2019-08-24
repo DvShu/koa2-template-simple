@@ -6,7 +6,7 @@ router.get('/index', async (ctx) => {
 
 <% if (template) { -%>
 router.get('/tpl', async (ctx) => {
-  await ctx.render('about', { message: 'This is about page!' });
+  ctx.render('about', { message: 'This is about page!' });
 });
 <% } -%>
 
