@@ -1,6 +1,6 @@
 {
   "name": "koa2-template-simple",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "koa2工程模板(simple)",
   "main": "index.js",
   "repository": "git@github.com:DvShu/koa2-template-simple.git",
